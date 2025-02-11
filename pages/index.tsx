@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 
 const Home = () => {
-  const [masters, setMasters] = useState([]);
+  interface Master {
+    id: number;
+    name: string;
+  }
+
+  const [masters, setMasters] = useState<Master[]>([]);
 
   useEffect(() => {
     const fetchMasters = async () => {
